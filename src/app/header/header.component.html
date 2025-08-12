@@ -9,41 +9,35 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navMenu">
-    <ul class="navbar-nav ms-auto">
-  <li class="nav-item">
-    <a class="nav-link nav-underline" routerLink="/" (click)="closeMenu()">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link nav-underline" routerLink="/about" (click)="closeMenu()">About</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link nav-underline" routerLink="/products" (click)="closeMenu()">Products</a>
-  </li>
-   <li class="nav-item">
-    <a class="nav-link nav-underline" routerLink="/gallery" (click)="closeMenu()">Gallery</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link nav-underline" routerLink="/contact" (click)="closeMenu()">Contact</a>
-  </li>
+  <ul class="navbar-nav ms-auto align-items-lg-center">
+    <li class="nav-item">
+      <a class="nav-link nav-underline" routerLink="/" (click)="closeMenu()">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-underline" routerLink="/about" (click)="closeMenu()">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-underline" routerLink="/products" (click)="closeMenu()">Products</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-underline" routerLink="/gallery" (click)="closeMenu()">Gallery</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-underline" routerLink="/contact" (click)="closeMenu()">Contact</a>
+    </li>
+  </ul>
 
   <!-- Quick Enquiry Button -->
-      <li class="nav-item">
-        <button
-  type="button"
-  class="btn btn-outline-light fw-bold"
-  data-bs-toggle="modal"
-  data-bs-target="#enquiry"
-  data-bs-whatever="@mdo"
-  id="submit"
->
-  Quick Enquiry
-</button>
-  <!-- other links -->
-</ul>
+  <button
+    type="button"
+    class="btn btn-outline-light fw-bold ms-lg-3 mt-2 mt-lg-0"
+    data-bs-toggle="modal"
+    data-bs-target="#enquiry"
+    data-bs-whatever="@mdo"
+    id="submit"
+  >
+    Quick Enquiry
+  </button>
+</div>
 
-   
-      
-
-      
-  </div>
 </nav>

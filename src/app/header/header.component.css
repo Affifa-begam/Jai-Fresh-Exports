@@ -1,3 +1,10 @@
+/* Initial load animation */
+.custom-navbar {
+  animation: slideDown 0.8s ease-out forwards;
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
 .custom-navbar {
   background: linear-gradient(to right, #2e7d32, #1b5e20); /* dark green gradient */
   border-bottom: 2px solid #66bb6a;
@@ -5,6 +12,73 @@
   z-index: 1000;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* deeper shadow */
 }
+
+/* Floating animation for idle state */
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Apply floating when page loads */
+.logo-img {
+  max-height: 70px;
+  width: auto;
+  animation: logoFloat 3s ease-in-out infinite;
+  transition: transform 0.3s ease, max-height 0.3s ease;
+}
+
+/* Hover effect - more interactive */
+.logo-img:hover {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+/* Shrink when navbar gets .shrink class from scroll */
+.custom-navbar.shrink .logo-img {
+  max-height: 55px;
+  animation: none; /* stop floating on shrink for stability */
+}
+
+
+@keyframes slideDown {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Shrink on scroll */
+.custom-navbar.shrink {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: linear-gradient(to right, #1b5e20, #2e7d32);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Link hover glow effect */
+.navbar-nav .nav-link {
+  position: relative;
+}
+
+.navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::before {
+  width: 100%;
+}
+
 
 .custom-btn {
   background-color: #2e7d32; /* darker green */
