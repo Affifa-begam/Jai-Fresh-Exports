@@ -1,82 +1,49 @@
-<!-- /* ---------- header.component.html ---------- */ -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-2 sticky-top custom-navbar">
+  <a class="navbar-brand d-flex align-items-center" href="#home" (click)="closeMenu()">
+    <img src="assets/logo1.png" alt="Jai Fresh Logo" class="me-3 logo-img animate-logo" />
+    <span class="fw-bold fs-4 brand-text">Jai Fresh Exports</span>
+  </a>
 
-<header id="organio-header" class="organio-header-section header-style-three">
-  <div class="or-header-top">
-    <div class="container">
-      <div class="or-header-top-content d-flex justify-content-between align-items-center">
-        <div class="or-header-top-slug" id="header-jai">
-          Welcome to Jai Fresh Exports
-        </div>
-        <div class="or-header-top-social">
-          <a aria-label="facebook" href="#"><i class="fab fa-facebook-f"></i></a>
-          <a aria-label="twitter" href="#"><i class="fab fa-twitter"></i></a>
-          <a aria-label="google-plus" href="#"><i class="fab fa-google-plus"></i></a>
-          <a aria-label="linkedin" href="#"><i class="fab fa-linkedin"></i></a>
-        </div>
-      </div>
-    </div>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navMenu">
+    <ul class="navbar-nav ms-auto">
+  <li class="nav-item">
+    <a class="nav-link nav-underline" routerLink="/" (click)="closeMenu()">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link nav-underline" routerLink="/about" (click)="closeMenu()">About</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link nav-underline" routerLink="/products" (click)="closeMenu()">Products</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link nav-underline" routerLink="/gallery" (click)="closeMenu()">Gallery</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link nav-underline" routerLink="/contact" (click)="closeMenu()">Contact</a>
+  </li>
+
+  <!-- Quick Enquiry Button -->
+      <li class="nav-item">
+        <button
+  type="button"
+  class="btn btn-outline-light fw-bold"
+  data-bs-toggle="modal"
+  data-bs-target="#enquiry"
+  data-bs-whatever="@mdo"
+  id="submit"
+>
+  Quick Enquiry
+</button>
+  <!-- other links -->
+</ul>
+
+   
+      
+
+      
   </div>
-
-  <div class="or-header-main-menu">
-    <div class="container">
-      <div class="or-header-main-menu-content d-flex justify-content-between align-items-center">
-
-        <div class="site-logo">
-          <a routerLink="/" (click)="closeMobile()">
-            <img width="210" src="assets/logo1.png" alt="jai fresh exports logo">
-          </a>
-        </div>
-
-        <!-- Desktop Navigation -->
-        <nav class="main-navigation-area clearfix ul-li d-none d-lg-block">
-          <ul class="menu-navigation">
-            <li><a routerLink="/" (click)="closeMobile()">Home</a></li>
-            <li><a routerLink="/about" (click)="closeMobile()">About</a></li>
-            <li><a routerLink="/products" (click)="closeMobile()">Products</a></li>
-            <li><a routerLink="/gallery" (click)="closeMobile()">Gallery</a></li>
-            <li><a routerLink="/contact" (click)="closeMobile()">Contact Us</a></li>
-            <li>
-              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#enquiry" id="submit">Quick Enquiry</button>
-            </li>
-          </ul>
-        </nav>
-
-        <!-- Mobile button -->
-        <div class="mobile-toggle d-lg-none">
-          <button class="btn-icon" aria-label="Toggle menu" (click)="toggleMobile()">
-            <i *ngIf="!mobileOpen" class="fal fa-bars"></i>
-            <i *ngIf="mobileOpen" class="fal fa-times"></i>
-          </button>
-        </div>
-
-      </div>
-
-      <!-- Mobile menu overlay/content -->
-      <div class="mobile_menu position-relative d-lg-none" [class.open]="mobileOpen">
-        <div class="mobile_menu_overlay" (click)="toggleMobile()" [class.show]="mobileOpen"></div>
-
-        <div class="mobile_menu_content" [attr.aria-hidden]="!mobileOpen">
-          <div class="m-brand-header d-flex justify-content-between align-items-center">
-            <a routerLink="/" (click)="closeMobile()"><img width="200" id="mobile-logo" src="assets/logo1.png" alt="logo"></a>
-            <button class="btn-icon" aria-label="Close menu" (click)="toggleMobile()"><i class="fal fa-times"></i></button>
-          </div>
-
-          <nav class="mobile-main-navigation clearfix ul-li">
-            <ul id="m-main-nav" class="navbar-nav text-capitalize clearfix">
-              <li><a routerLink="/" (click)="closeMobile()">Home</a></li>
-              <li><a routerLink="/about" (click)="closeMobile()">About</a></li>
-              <li><a routerLink="/products" (click)="closeMobile()">Products</a></li>
-              <li><a routerLink="/gallery" (click)="closeMobile()">Gallery</a></li>
-              <li><a routerLink="/contact" (click)="closeMobile()">Contact Us</a></li>
-              <li>
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#enquiry" id="submit">Quick Enquiry</button>
-              </li>
-            </ul>
-          </nav>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</header>
+</nav>

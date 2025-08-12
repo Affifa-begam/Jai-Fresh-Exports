@@ -1,0 +1,136 @@
+/* === Carousel Styling === */
+.carousel img {
+  height: 600px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .carousel img {
+    height: 300px;
+  }
+
+  .carousel-caption {
+    padding: 15px;
+    width: 90%;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel img {
+    height: 220px;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.95rem;
+  }
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  text-align: center;
+}
+
+.carousel-caption h2,
+.carousel-caption p {
+  margin: 0;
+  color: #fff;
+}
+
+/* === Welcome Section === */
+section h2 {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+section p {
+  color: #444;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* === Features Section === */
+.features-section {
+  background-color: #f9fff9;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.feature-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 128, 0, 0.3);
+}
+
+.feature-img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 128, 0, 0.5);
+}
+
+.features-section h5 {
+  font-weight: 600;
+  color: #1b5e20;
+  margin-top: 10px;
+}
+
+.features-section p {
+  font-size: 1rem;
+  color: #444;
+  max-width: 90%;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .features-section h5 {
+    font-size: 1.1rem;
+  }
+
+  .features-section p {
+    font-size: 0.95rem;
+  }
+
+  .feature-img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-section h5 {
+    font-size: 1rem;
+  }
+
+  .features-section p {
+    font-size: 0.9rem;
+  }
+
+  .feature-img {
+    width: 100px;
+    height: 100px;
+  }
+}

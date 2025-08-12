@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
+
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-header',
@@ -10,17 +12,16 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  mobileOpen = false;
 
-  toggleMobile() {
-    this.mobileOpen = !this.mobileOpen;
-    // lock body scroll when mobile menu open
-    if (this.mobileOpen) document.body.classList.add('no-scroll');
-    else document.body.classList.remove('no-scroll');
-  }
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
 
-  closeMobile() {
-    this.mobileOpen = false;
-    document.body.classList.remove('no-scroll');
+  closeMenu(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      const navMenu = document.getElementById('navMenu');
+      if (navMenu) {
+        const bsCollapse = bootstrap.Collapse.getInstance(navMenu) || new bootstrap.Collapse(navMenu);
+        bsCollapse.hide();
+      }
+    }
   }
 }

@@ -1,0 +1,153 @@
+.hero-banner {
+  background: url('/assets/products.jpg') center/cover no-repeat;
+  position: relative;
+  padding: 120px 15px;
+  color: white;
+}
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: auto;
+}
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.hero-content p {
+  font-size: 1rem;
+  margin: 20px 0;
+}
+.hero-btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+@media (max-width: 576px) {
+  .hero-banner {
+    padding: 80px 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero-content p {
+    font-size: 0.85rem;
+  }
+
+  .product-card img {
+    height: 160px;
+  }
+
+  .product-title {
+    font-size: 1rem;
+  }
+
+  .product-desc {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+
+/* === PRODUCT FILTER === */
+
+.product-icons a {
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  padding: 6px 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.product-icons a:hover {
+  background: #28a745; /* Bootstrap green */
+  color: white !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.product-filter select {
+  height: 50px;
+  border-radius: 30px;
+  padding: 0 15px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+/* === PRODUCT LIST === */
+.product-list h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #28a745;
+}
+.product-list p {
+  color: #666;
+}
+
+/* === PRODUCT CARD === */
+.product-card {
+  border: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.product-card img {
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.product-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.product-brand {
+  font-size: 0.9rem;
+  color: #888;
+}
+.product-price {
+  font-size: 1rem;
+  color: #28a745;
+  font-weight: 600;
+}
+
+/* === BUTTON STYLES === */
+.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+.btn-success:hover {
+  background-color: #218838;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+  .product-card img {
+    height: 180px;
+  }
+}
+
