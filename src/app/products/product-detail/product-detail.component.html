@@ -1,0 +1,72 @@
+<section
+  id="or-breadcrumbs"
+  class="or-breadcrumbs-section position-relative"
+  [style.backgroundImage]="'url(assets/Products/product1.jpg)'"
+>
+  <div class="background_overlay"></div>
+  <div class="container">
+    <div class="or-breadcrumbs-content text-center" *ngIf="product">
+      <div class="page-title headline">
+        <h1>{{ product.name }}</h1>
+      </div>
+      <div class="or-breadcrumbs-items ul-li">
+        <ul>
+          <li>
+            <a [routerLink]="['/products']">{{ product.category }}</a>
+          </li>
+          <li>{{ product.name }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section *ngIf="product" id="or-shop-details" class="or-shop-details-section pro-d-all">
+  <div class="container">
+    <div class="or-shop-details-content">
+      <div class="row">
+        <!-- Image -->
+        <div class="col-lg-6">
+          <div class="shop-details-img-slider-area">
+            <div class="shop-details-img-slider">
+              <div class="shop-details-img-wrap">
+                <img class="pro-det-h" [src]="product.image" [alt]="product.name">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="col-lg-6">
+          <div class="shop-details-text headline pera-content">
+            <div class="shop-details-title">
+              <h3>{{ product.name }}</h3>
+            </div>
+
+            <div class="shop-details-text-decs">
+              {{ product.description }}
+            </div>
+
+            <div class="or-project-overview-comment-list pro-d-list">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="or-project-overview-list-item ul-li-block">
+                    <ul>
+                      <li *ngFor="let feature of product.features">{{ feature }}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- If no product found -->
+<div *ngIf="!product" class="container pt-20 text-center">
+  <h2>Product not found</h2>
+</div>
