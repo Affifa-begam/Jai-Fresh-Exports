@@ -8,7 +8,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   selector: 'app-blog',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule],
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.css']
+  templateUrl: './gallery.component.html',
+  styleUrls: ['./gallery.component.css']
 })
-export class BlogComponent {}
+export class GalleryComponent {}
