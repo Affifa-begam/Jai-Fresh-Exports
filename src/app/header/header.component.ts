@@ -1,20 +1,32 @@
 import { Component, Inject, PLATFORM_ID, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule, NgForm } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 declare var bootstrap: any;
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule, HttpClientModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   private scrollHandler = () => {};
 
-  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+  enquiryData = {
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  };
+
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: object,
+    private http: HttpClient
+  ) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -47,4 +59,35 @@ export class HeaderComponent implements OnInit, OnDestroy {
       }
     }
   }
+
+  submitQuickEnquiry(form: NgForm) {
+  if (form.valid) {
+    this.http.post('http://localhost:3000/api/quick-enquiry', this.enquiryData).subscribe({
+      next: () => {
+        alert('Message sent successfully!');
+        form.resetForm();
+
+        const modalEl = document.getElementById('enquiry');
+        if (modalEl) {
+          const modalInstance =
+            bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+          modalInstance.hide();
+        }
+
+        // 🔹 Ensure leftover backdrop & body classes are removed
+        const backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) {
+          backdrop.remove();
+        }
+        document.body.classList.remove('modal-open');
+        document.body.style.removeProperty('padding-right');
+      },
+      error: () => {
+        alert('Failed to send message. Please try again.');
+      }
+    });
+  } else {
+    alert('Please fill all required fields with valid details.');
+  }
+}
 }

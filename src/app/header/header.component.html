@@ -9,35 +9,114 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navMenu">
-  <ul class="navbar-nav ms-auto align-items-lg-center">
-    <li class="nav-item">
-      <a class="nav-link nav-underline" routerLink="/" (click)="closeMenu()">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link nav-underline" routerLink="/about" (click)="closeMenu()">About</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link nav-underline" routerLink="/products" (click)="closeMenu()">Products</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link nav-underline" routerLink="/gallery" (click)="closeMenu()">Gallery</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link nav-underline" routerLink="/contact" (click)="closeMenu()">Contact</a>
-    </li>
-  </ul>
+    <ul class="navbar-nav ms-auto align-items-lg-center">
+      <li class="nav-item"><a class="nav-link nav-underline" routerLink="/" (click)="closeMenu()">Home</a></li>
+      <li class="nav-item"><a class="nav-link nav-underline" routerLink="/about" (click)="closeMenu()">About</a></li>
+      <li class="nav-item"><a class="nav-link nav-underline" routerLink="/products" (click)="closeMenu()">Products</a></li>
+      <li class="nav-item"><a class="nav-link nav-underline" routerLink="/gallery" (click)="closeMenu()">Gallery</a></li>
+      <li class="nav-item"><a class="nav-link nav-underline" routerLink="/contact" (click)="closeMenu()">Contact</a></li>
+    </ul>
 
-  <!-- Quick Enquiry Button -->
-  <button
-    type="button"
-    class="btn btn-outline-light fw-bold ms-lg-3 mt-2 mt-lg-0"
-    data-bs-toggle="modal"
-    data-bs-target="#enquiry"
-    data-bs-whatever="@mdo"
-    id="submit"
-  >
-    Quick Enquiry
-  </button>
-</div>
-
+    <button
+      type="button"
+      class="btn btn-outline-light fw-bold ms-lg-3 mt-2 mt-lg-0"
+      data-bs-toggle="modal"
+      data-bs-target="#enquiry">
+      Quick Enquiry
+    </button>
+  </div>
 </nav>
+
+<!-- Quick Enquiry Modal -->
+<div class="modal fade" id="enquiry" tabindex="-1" aria-labelledby="enquiryLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content enquiry-card p-0">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold" id="enquiryLabel">Quick Enquiry</h5>
+        <button type="button" class="btn-close btn-close-round" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <hr class="mt-3 mb-0 opacity-25"/>
+
+      <div class="modal-body px-4 pb-4 pt-3">
+        <form #quickForm="ngForm" (ngSubmit)="submitQuickEnquiry(quickForm)" novalidate>
+
+          <div class="row g-4">
+            <!-- Name -->
+            <div class="col-md-6">
+              <div class="underline-group">
+                <label class="form-label">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  [(ngModel)]="enquiryData.name"
+                  class="form-control underline-input"
+                  required
+                  #name="ngModel">
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="col-md-6">
+              <div class="underline-group">
+                <label class="form-label">Phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  [(ngModel)]="enquiryData.phone"
+                  class="form-control underline-input"
+                  inputmode="numeric"
+                  pattern="^[0-9]{10}$"
+                  required
+                  #phone="ngModel">
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="col-12">
+              <div class="underline-group">
+                <label class="form-label">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  [(ngModel)]="enquiryData.email"
+                  class="form-control underline-input"
+                  autocomplete="email"
+                  inputmode="email"
+                  required
+                  pattern="^[a-zA-Z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
+                  #email="ngModel">
+              </div>
+              <div class="invalid-hint" *ngIf="email.touched && email.invalid">
+                <span *ngIf="email.errors?.['required']">Email is required.</span>
+                <span *ngIf="email.errors?.['pattern']">Please enter a valid email address.</span>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="col-12">
+              <div class="underline-group">
+                <label class="form-label">Message</label>
+                <textarea
+                  name="message"
+                  [(ngModel)]="enquiryData.message"
+                  class="form-control underline-input"
+                  rows="2"
+                  required
+                  #message="ngModel"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <hr class="opacity-25 mt-3 mb-3"/>
+
+          <button type="submit"
+                  class="btn btn-send w-100"
+                  [disabled]="quickForm.invalid">
+            Send message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
