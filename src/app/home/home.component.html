@@ -1,52 +1,283 @@
- <section class="home-section" id="home">
-<div id="carouselExampleIndicators" class="carousel slide position-relative" data-bs-ride="carousel" data-bs-interval="2000">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets/about1.jpg" class="d-block w-100" alt="Eco Image 2" />
-    </div>
-    <div class="carousel-item">
-      <img src="assets/home3.jpg" class="d-block w-100" alt="Eco Image 3" />
-    </div>
-    <div class="carousel-item">
-      <img src="assets/home1.jpg" class="d-block w-100" alt="Eco Image 4" />
-    </div>
-  </div>
+<!-- =============================
+     ABOUT HERO BANNER WITH 3 CAROUSEL SLIDES
+================================= -->
+<section class="hero-banner about-hero position-relative d-flex align-items-center justify-content-center">
+  <div id="aboutHeroCarousel" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="6000">
+    <div class="carousel-inner h-100">
 
-  <!-- Welcome Text Overlay -->
-  <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-center">
-    <h2 class="text-light fw-bold display-5">Welcome to Jai Fresh Exports</h2>
-    <p class="lead text-light">“Serve Well. Compost Naturally.”</p>
-  </div>
+      <!-- Slide 1 -->
+      <div class="carousel-item active h-100">
+        <div class="hero-bg" style="background-image: url('/assets/Features/about1.jpg');"></div>
+        <div class="overlay"></div>
+        <div class="container text-center text-white d-flex flex-column justify-content-center h-100">
+          <div class="hero-content-box">
+            <h1>Our Journey</h1>
+            <p>From humble beginnings to a global vision — we craft eco-friendly solutions that care for both people and the planet.</p>
+            <a routerLink="/about" class="btn btn-success about-btn mt-3">
+    Learn More 
+  </a>
+          </div>
+        </div>
+      </div>
 
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
+      <!-- Slide 2 -->
+      <div class="carousel-item h-100">
+        <div class="hero-bg" style="background-image: url('/assets/Products/product.jpg');"></div>
+        <div class="overlay"></div>
+        <div class="container text-center text-white d-flex flex-column justify-content-center h-100">
+          <div class="hero-content-box">
+            <h1>Our Mission</h1>
+            <p>To inspire change by delivering <b>100% natural, sustainable, and innovative</b> products for everyday living.</p>
+             <a routerLink="/products" class="btn btn-outline-light btn-lg mt-3">Explore Products</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item h-100">
+        <div class="hero-bg" style="background-image: url('/assets/Gallery/gallery.png');"></div>
+        <div class="overlay"></div>
+        <div class="container text-center text-white d-flex flex-column justify-content-center h-100">
+          <div class="hero-content-box">
+            <h1>Our Promise</h1>
+            <p>Trusted worldwide for our <b>quality, reliability, and eco-conscious values</b> — we’re more than products, we’re a promise for a greener tomorrow.</p>
+             <a routerLink="/contact" class="btn btn-warning btn-lg mt-3">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#aboutHeroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#aboutHeroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
+
+<!-- ================== About Us ================== -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Image -->
+      <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+        <img src="assets/Features/about-img2.png"
+             class="img-fluid rounded-3 shadow"
+             alt="areca leaf plates wholesale dealers">
+      </div>
+
+     <div class="col-lg-6" data-aos="fade-left">
+  <span class="text-success fw-bold text-uppercase">About Us</span>
+  <h2 class="about-title">Leading Manufacturers & Exporters of Areca Leaf Plates</h2>
+  <p class="about-text">
+    For over 12 years, we have been dedicated to producing and exporting eco-friendly Areca leaf plates.
+    Our mission is to promote sustainable living by offering 100% natural, bio-based products.
+    Along with protecting nature, we also empower rural communities by providing fair wages and employment opportunities.
+  </p>
+
+  <!-- Features -->
+  <ul class="about-list list-unstyled mt-4">
+    <li class="d-flex mb-3" data-aos="fade-up">
+      <img src="assets/Home/leaf.png" class="me-2" alt="icon">
+      <span>Crafted from fresh, naturally fallen Areca palm leaves.</span>
+    </li>
+    <li class="d-flex mb-3" data-aos="fade-up" data-aos-delay="100">
+      <img src="assets/Home/leaf.png" class="me-2" alt="icon">
+      <span>Keeps food warm while preserving its natural taste & aroma.</span>
+    </li>
+    <li class="d-flex mb-3" data-aos="fade-up" data-aos-delay="200">
+      <img src="assets/Home/leaf.png" class="me-2" alt="icon">
+      <span>100% eco-friendly, biodegradable & safe for single-use.</span>
+    </li>
+    <li class="d-flex mb-3" data-aos="fade-up" data-aos-delay="300">
+      <img src="assets/Home/leaf.png" class="me-2" alt="icon">
+      <span>Durable, leak-proof, lightweight & easy to handle.</span>
+    </li>
+  </ul>
+
+  <a routerLink="/about" class="btn btn-success about-btn mt-3 mb-4">
+  Read More <i class="far fa-long-arrow-right ms-2"></i>
+</a>
+
 </div>
 
+<!-- ================== Products ================== -->
+<section id="products" class="py-5 bg-light">
+  <div class="container text-center">
+    <span class="text-success fw-bold text-uppercase">Products</span>
+    <h2 class="fw-bold mb-5" data-aos="fade-up">Featured Products</h2>
 
-<!-- Features Section -->
-<!-- Features Section -->
-<section class="container py-5 features-section">
-  <div class="row g-4 text-center justify-content-center">
-    <div class="col-lg-4 col-md-6">
-      <img src="assets/feature1.jpg" class="feature-img mb-3 rounded-circle img-fluid" alt="Compostable" />
-      <h5>100% Compostable</h5>
-      <p>Our plates decompose naturally and nourish the earth.</p>
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <img src="assets/feature2.png" class="feature-img mb-3 rounded-circle img-fluid" alt="Eco Friendly" />
-      <h5>Eco-Friendly</h5>
-      <p>Crafted from sugarcane bagasse, safe for you and the planet.</p>
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <img src="assets/feature3.jpg" class="feature-img mb-3 rounded-circle img-fluid" alt="Plastic Free" />
-      <h5>Plastic-Free</h5>
-      <p>Zero plastic, zero guilt. Only clean, green solutions.</p>
+    <div class="row g-4">
+
+      <!-- Product 1 -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card shadow h-100 border-0">
+          <img src="assets/Home/Products/square.jpg" class="card-img-top" alt="square areca leaf plates">
+          <div class="card-body">
+            <h5 class="card-title">Squares</h5>
+            <a routerLink="/products" class="btn btn-outline-success btn-sm mt-2">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card shadow h-100 border-0">
+          <img src="assets/Home/Products/round.jpg" class="card-img-top" alt="round areca leaf plates">
+          <div class="card-body">
+            <h5 class="card-title">Rounds</h5>
+            <a routerLink="/products" class="btn btn-outline-success btn-sm mt-2">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card shadow h-100 border-0">
+          <img src="assets/Home/Products/rectangle.jpg" class="card-img-top" alt="rectangle areca leaf plates">
+          <div class="card-body">
+            <h5 class="card-title">Rectangles</h5>
+            <a routerLink="/products" class="btn btn-outline-success btn-sm mt-2">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+        <div class="card shadow h-100 border-0">
+          <img src="assets/Home/Products/round-common.png" class="card-img-top" alt="areca leaf bowl">
+          <div class="card-body">
+            <h5 class="card-title">Bowls</h5>
+            <a routerLink="/products" class="btn btn-outline-success btn-sm mt-2">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="500">
+        <div class="card shadow h-100 border-0">
+          <img src="assets/Home/Products/fish.jpg" class="card-img-top" alt="disposable plates and bowls">
+          <div class="card-body">
+            <h5 class="card-title">Extra Curves</h5>
+            <a routerLink="/products" class="btn btn-outline-success btn-sm mt-2">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="600">
+        <div class="card shadow h-100 border-0">
+          <img src="assets/Home/Products/combo.jpg" class="card-img-top" alt="combo areca leaf plates">
+          <div class="card-body">
+            <h5 class="card-title">Combo Packs</h5>
+            <a routerLink="/products" class="btn btn-outline-success btn-sm mt-2">Read More</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
+<!-- ================== Why Choose Us ================== -->
+<section id="why-choose" class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Left Image -->
+      <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+        <img src="assets/Home/choose.png"
+             class="img-fluid rounded-3 shadow"
+             alt="areca leaf plates suppliers">
+      </div>
+
+      <!-- Right Content -->
+      <div class="col-lg-6" data-aos="fade-left">
+        <span class="text-success fw-bold text-uppercase">Why Choose Us?</span>
+        <h2 class="fw-bold mb-3">Trusted Manufacturers of Areca Palm Leaf Plates</h2>
+        <p>
+          At <strong>Jai Fresh Exports</strong>, we are committed to delivering eco-friendly,
+          sustainable, and premium-quality Areca leaf products. Every plate is
+          crafted from naturally fallen palm leaves without the use of chemicals or additives,
+          ensuring safety for you and the environment.
+        </p>
+        <p>
+          By choosing us, you not only receive durable and biodegradable tableware,
+          but also support rural communities through fair wages and employment opportunities.
+        </p>
+        <a routerLink="/about" class="btn btn-success rounded-pill px-4 mt-3">
+          Read More <i class="far fa-long-arrow-right ms-2"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- ================== Testimonials ================== -->
+<section id="testimonials" class="py-5 bg-light">
+  <div class="container">
+    <!-- Title -->
+    <div class="text-center mb-5" data-aos="zoom-in">
+      <h6 class="text-success fw-bold text-uppercase">Testimonials</h6>
+      <h2 class="fw-bold">What Our Happy Customers Say</h2>
+    </div>
+
+    <!-- Carousel -->
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+      <div class="carousel-inner">
+
+        <!-- Testimonial 1 -->
+        <div class="carousel-item active">
+          <div class="d-flex flex-column align-items-center text-center" data-aos="fade-up">
+            <img src="assets/Home/icon2.jpg" class="rounded-circle shadow mb-3 testimonial-img" alt="Raj Mahesh" width="90">
+            <h5 class="fw-bold">Raj Mahesh</h5>
+            <small class="text-muted">Chennai</small>
+            <p class="mt-3 px-md-5 fst-italic">
+              “Our wedding was perfect, and these eco-friendly plates added a special touch.
+              Everyone loved them – stylish, sturdy, and sustainable!”
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="carousel-item">
+          <div class="d-flex flex-column align-items-center text-center" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/Home/icon2.jpg" class="rounded-circle shadow mb-3 testimonial-img" alt="John Mathew" width="90">
+            <h5 class="fw-bold">John Mathew</h5>
+            <small class="text-muted">Bangalore</small>
+            <p class="mt-3 px-md-5 fst-italic">
+              “The small bowls were a hit at our event – practical, elegant, and eco-conscious.
+              Exactly what we needed. Highly recommended!”
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="carousel-item">
+          <div class="d-flex flex-column align-items-center text-center" data-aos="fade-up" data-aos-delay="400">
+            <img src="assets/Home/icon2.jpg" class="rounded-circle shadow mb-3 testimonial-img" alt="Siva" width="90">
+            <h5 class="fw-bold">Siva</h5>
+            <small class="text-muted">Canada</small>
+            <p class="mt-3 px-md-5 fst-italic">
+              “Simple yet classy! These plates present food beautifully
+              and are perfect for both restaurants and special occasions.”
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle p-3"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle p-3"></span>
+      </button>
+    </div>
+  </div>
+</section>

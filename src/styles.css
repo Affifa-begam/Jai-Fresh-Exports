@@ -1,6 +1,9 @@
 body, html {
   cursor: pointer;/* You can add global styles to this file, and also import other style files */
 }
+body {
+  overflow-x: hidden; /* Force remove horizontal scrollbar site-wide */
+}
 
 html {
   scroll-behavior: smooth;
