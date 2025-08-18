@@ -1,115 +1,298 @@
-footer.footer-section {
-  font-size: 0.95rem;
-  background-color: #f8f9fa; /* light background */
+.custom-footer {
+  background: linear-gradient(135deg, #1f701f, #145014);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 40px;
+  clip-path: ellipse(130% 100% at 50% 0%);
+  position: relative;
+  overflow: hidden;
 }
 
-footer.footer-section p,
-footer.footer-section address {
-  line-height: 1.6;
-  color: #555;
+/* 🌟 Fade-in with slight zoom */
+.custom-footer {
+  animation: fadeZoom 1.2s ease-in-out;
+}
+@keyframes fadeZoom {
+  from { opacity: 0; transform: scale(0.95) translateY(50px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-.footer-about p {
-  text-align: justify;
-  padding-left: 15px;
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
 }
 
-.keep-in-touch {
-  padding-left: 15px;
+/* 🎇 Column glass effect */
+.footer-column {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.footer-column:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-@media (min-width: 992px) {
-  .footer-about,
-  .keep-in-touch {
-    padding-left: 60px;
+.footer-logo {
+  width: 100px;
+  margin-bottom: 15px;
+  animation: floatLogo 3s ease-in-out infinite;
+}
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.footer-column h3 {
+  margin-bottom: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  position: relative;
+  font-size: 18px;
+  color: #ffd966;
+}
+
+/* ✨ Neon underline */
+.footer-column h3::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, orange, yellow);
+  transition: width 0.5s ease;
+}
+.footer-column h3:hover::after {
+  width: 50%;
+}
+
+.footer-column p,
+.footer-column a {
+  font-size: 14px;
+  color: #eaeaea;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.footer-column a:hover {
+  color: #ffd966;
+  text-shadow: 0 0 5px rgba(255, 217, 102, 0.7);
+}
+
+/* 🔗 List hover glow */
+.footer-column ul li {
+  margin-bottom: 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.footer-column ul li:hover {
+  transform: translateX(6px);
+  color: #ffd966;
+}
+
+/* 🔥 Social icons neon pulse */
+.social-icons a {
+  margin-right: 10px;
+  font-size: 18px;
+  display: inline-block;
+  color: #fff;
+  transition: transform 0.4s ease, color 0.4s ease, text-shadow 0.4s ease;
+}
+.social-icons a:hover {
+  transform: scale(1.3) rotate(12deg);
+  color: #ffd966;
+  text-shadow: 0 0 8px #ffd966;
+}
+
+/* 📝 Inputs with glowing borders */
+/* 📝 Form inputs */
+.enquiry form input,
+.enquiry form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #fff; /* White background */
+  color: #333; /* Dark text */
+  font-size: 14px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Placeholder visible */
+.enquiry form input::placeholder,
+.enquiry form textarea::placeholder {
+  color: #777;  /* Gray placeholder */
+  opacity: 1;   /* Ensure visibility */
+  font-style: italic;
+}
+
+.enquiry form input:focus,
+.enquiry form textarea:focus {
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
+  transform: scale(1.03);
+  outline: none;
+}
+
+
+/* 🚀 Gradient glowing button */
+.submit-btn {
+  background: linear-gradient(90deg, orange, #ff6600);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: glowPulse 2s infinite;
+}
+.submit-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(255, 140, 0, 0.8);
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 5px rgba(255, 140, 0, 0.7); }
+  50% { box-shadow: 0 0 20px rgba(255, 140, 0, 1); }
+  100% { box-shadow: 0 0 5px rgba(255, 140, 0, 0.7); }
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 13px;
+  animation: slideUp 1.5s ease-in-out;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* 📱 Mobile Responsive Footer */
+
+/* Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .footer-column h3 {
+    font-size: 16px;
+  }
+
+  .enquiry form input,
+  .enquiry form textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .submit-btn {
+    padding: 10px 16px;
+    font-size: 14px;
   }
 }
 
-.social-icons a {
-  color: #28a745;
-  font-size: 1.4rem;
-  transition: color 0.3s ease;
-  margin-right: 15px;
+/* Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .footer-top {
+    grid-template-columns: 1fr; /* Single column */
+    gap: 20px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .footer-column {
+    padding: 10px;
+  }
+
+  .footer-logo {
+    margin: 0 auto 15px;
+    display: block;
+  }
+
+  .social-icons {
+    text-align: center;
+  }
+
+  .social-icons a {
+    font-size: 20px;
+    margin: 0 8px;
+  }
+
+  /* Form Inputs */
+  .enquiry form {
+    width: 100%;
+    max-width: 350px;   /* ✅ Prevents inputs from going edge to edge */
+    margin: 0 auto;
+  }
+
+  .enquiry form input,
+  .enquiry form textarea {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+  /* Submit Button */
+  .submit-btn {
+    width: 100%;
+    max-width: 350px;
+    margin: 10px auto 0;
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 25px; /* ✅ Rounded button */
+    background: linear-gradient(90deg, #ff8c00, #ff6600);
+  }
 }
 
-.social-icons a:hover {
-  color: #1e7e34;
-}
-
-footer.footer-section img {
-  border-radius: 5px;
-  transition: transform 0.3s ease-in-out;
-  width: 100%;
-  height: 85px;
-  object-fit: cover;
-}
-
-footer.footer-section img:hover {
-  transform: scale(1.05);
-}
-
-.instagram-feed .row {
-  margin-left: -1px;
-  margin-right: -1px;
-}
-
-.instagram-feed .col-4 {
-  padding: 1px;
-}
-
-.instagram-feed img {
-  width: 100%;
-  height: 85px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 0;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.instagram-feed img:hover {
-  transform: scale(1.05);
-}
-
-/* === NEWSLETTER SECTION === */
-.newsletter-section {
-  position: relative;
-  background-image: url('/assets/about2.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 80px 0;
+.footer-bottom {
   text-align: center;
-  color: #fff;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.25);
+  font-size: 13px;
+  line-height: 1.6;
+  animation: slideUp 1.5s ease-in-out;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f5f5f5; /* ✅ ensures text visible on dark bg */
 }
 
-.newsletter-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+/* 📱 Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .footer-bottom {
+    font-size: 12px;
+    padding: 12px 8px;
+    text-align: center;
+    background: rgba(0,0,0,0.35); /* ✅ slightly darker for contrast */
+    border-radius: 0 0 12px 12px;  /* ✅ smooth bottom edges */
+    margin-top: 10px;             /* ✅ spacing from content */
+    word-break: break-word;       /* ✅ prevents text overflow */
+  }
+}
+/* ✅ Fix footer curve in mobile view */
+@media (max-width: 600px) {
+  .custom-footer {
+    clip-path: ellipse(180% 100% at 50% 0%); /* Smoother curve, pushed higher */
+  }
 }
 
-.newsletter-section .container {
-  position: relative;
-  z-index: 1;
+@media (max-width: 400px) {
+  .custom-footer {
+    clip-path: ellipse(200% 100% at 50% 0%); /* Extra safe for very small phones */
+  }
 }
 
-.newsletter-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
 
-.newsletter-section .input-group {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.newsletter-section .form-control {
-  border-radius: 30px 0 0 30px;
-  padding: 12px 20px;
-}
-
-.newsletter-section .btn {
-  border-radius: 0 30px 30px 0;
-  padding: 12px 25px;
-}

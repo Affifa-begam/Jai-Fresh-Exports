@@ -3,3 +3,11 @@
 <router-outlet></router-outlet>
 
 <app-footer></app-footer>
+
+<button
+  class="scroll-to-top"
+  *ngIf="showScrollButton"
+  (click)="scrollToTop()">
+  <i></i>
+</button>
+

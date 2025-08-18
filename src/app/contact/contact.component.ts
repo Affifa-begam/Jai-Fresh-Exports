@@ -4,16 +4,16 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, HttpClientModule], // ✅ Added HttpClientModule
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
+  
   formData = {
     name: '',
     email: '',
@@ -30,7 +30,7 @@ export class ContactComponent {
       return;
     }
 
-   this.http.post('http://localhost:3000/api/contact', this.formData)
+    this.http.post('http://localhost:3000/api/contact', this.formData)
       .subscribe({
         next: () => {
           alert('Message submitted successfully!');

@@ -1,58 +1,72 @@
-<section class="newsletter-section py-5">
-  <div class="container text-center">
-    <h2>Get Update About Products</h2>
-    <div class="input-group my-4 mx-auto" style="max-width: 500px;">
-      <input type="email" class="form-control" placeholder="Email Address" aria-label="Email Address" />
-      <button class="btn btn-success" type="button">SUBSCRIBE</button>
+<footer class="custom-footer">
+  <!-- Footer Top -->
+  <div class="footer-top">
+
+    <!-- About Column -->
+    <div class="footer-column about">
+      <h3>About Us</h3>
+      <p>
+        At Jai Exports India, we’re dedicated to providing premium Bagasse plates made from sugarcane
+        residue. Our eco-friendly tableware is 100% biodegradable, compostable, and plastic-free —
+        helping create a cleaner, greener planet one plate at a time.
+      </p>
+      <a (click)="goToAbout()">Readmore</a>
+
+      <div class="social-icons mt-3">
+        <a href="https://www.facebook.com/profile.php?id=61579030041681" target="_blank" rel="noopener" aria-label="Facebook" class="me-3"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/jaifreshindia" target="_blank" rel="noopener" aria-label="X (Twitter)" class="me-3"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/jaifreshindia/" target="_blank" rel="noopener" aria-label="Instagram" class="me-3"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/jai-fresh-india-9bb2b1372/" target="_blank" rel="noopener" aria-label="LinkedIn" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+      </div>
     </div>
-  </div>
-</section>
 
-<footer class="bg-light py-5 footer-section">
-  <div class="container">
-    <div class="row">
-
-      <!-- ABOUT US -->
-      <div class="col-md-4 mb-4 footer-about">
-        <h4>ABOUT US</h4>
-        <p>
-          At Jai Exports India, we’re dedicated to providing premium Bagasse plates made from sugarcane
-          residue. Our eco-friendly tableware is 100% biodegradable, compostable, and plastic-free —
-          helping create a cleaner, greener planet one plate at a time.
-        </p>
-        <div class="social-icons mt-3">
-          <a href="https://www.facebook.com/profile.php?id=61579030041681" target="_blank" rel="noopener" aria-label="Facebook" class="me-3"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://x.com/jaifreshindia" target="_blank" rel="noopener" aria-label="X (Twitter)" class="me-3"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/jaifreshindia/" target="_blank" rel="noopener" aria-label="Instagram" class="me-3"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/jai-fresh-india-9bb2b1372/" target="_blank" rel="noopener" aria-label="LinkedIn" class="me-3"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-
-      <!-- KEEP IN TOUCH -->
-      <div class="col-md-4 mb-4 keep-in-touch">
-        <h4>KEEP IN TOUCH</h4>
-        <address>
-          Jai Fresh India,<br>
-          1152/40, Trichy Road,<br>
-          Ramanathapuram,<br>
-          Coimbatore - 641045,<br>
-          Tamilnadu, India.<br>
-        </address>
-      </div>
-
-      <!-- INSTAGRAM FEED -->
-      <div class="col-md-4 mb-4 instagram-feed">
-        <h4>INSTAGRAM FEED</h4>
-        <div class="row g-0">
-          <div class="col-4"><img src="assets/widget1.jpg" alt="Instagram 1"></div>
-          <div class="col-4"><img src="assets/widget2.jpg" alt="Instagram 2"></div>
-          <div class="col-4"><img src="assets/widget3.jpg" alt="Instagram 3"></div>
-          <div class="col-4"><img src="assets/widget4.jpg" alt="Instagram 4"></div>
-          <div class="col-4"><img src="assets/widget5.jpg" alt="Instagram 5"></div>
-          <div class="col-4"><img src="assets/widget6.jpg" alt="Instagram 6"></div>
-        </div>
-      </div>
-
+    <!-- Quick Links Column -->
+    <div class="footer-column links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a (click)="goToHome()">Home</a></li>
+        <li><a (click)="goToAbout()">About</a></li>
+        <li><a (click)="goToProducts()">Products</a></li>
+        <li><a (click)="goToGallery()">Gallery</a></li>
+        <li><a (click)="goToContact()">Contact Us</a></li>
+      </ul>
     </div>
+
+    <!-- Contact Column -->
+    <div class="footer-column contact">
+      <h3>Get in Touch</h3>
+      <p>
+        Jai Fresh India,<br>
+        1152/40, Trichy Road,<br>
+        Ramanathapuram,<br>
+        Coimbatore - 641045,<br>
+        Tamilnadu, India.<br>
+      </p>
+      <p>Email: <a href="mailto:jaifreshindia@gmail.com.com">jaifreshindia@gmail.com</a></p>
+      <p>Phone: <a href="tel:+919688828111">+91 9688828111</a>, <br><a href="tel:+919894028111">+91 9894028111</a></p>
+    </div>
+
+    <!-- Quick Enquiry Column -->
+    <div class="footer-column enquiry">
+      <h3>Quick Enquiry</h3>
+      <form #enquiryForm="ngForm" (ngSubmit)="onSubmit(enquiryForm)">
+        <input type="text" name="name" placeholder="Enter name" [(ngModel)]="formData.name" required>
+
+        <input type="text" name="phone" placeholder="Enter number" [(ngModel)]="formData.phone"
+               required pattern="^[0-9]{10}$" title="Phone number must be 10 digits">
+
+        <input type="email" name="email" placeholder="Enter email" [(ngModel)]="formData.email" required>
+
+        <textarea name="message" placeholder="Enter message" [(ngModel)]="formData.message" required></textarea>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+
+  </div> <!-- ✅ footer-top closed here -->
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025 Jai Fresh Exports. All Rights Reserved.</p>
   </div>
 </footer>

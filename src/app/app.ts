@@ -1,5 +1,5 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
   selector: 'app-root',
   standalone: true,
   imports: [
+    CommonModule,      // ✅ Needed for *ngIf and other directives
     HeaderComponent,
     FooterComponent,
     RouterOutlet
@@ -18,6 +19,8 @@ import { HeaderComponent } from './header/header.component';
   styleUrls: ['./app.css']
 })
 export class App {
+  showScrollButton = false;
+
   constructor(
     private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object
@@ -28,6 +31,16 @@ export class App {
         .subscribe(() => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+      window.addEventListener('scroll', () => {
+        this.showScrollButton = window.scrollY > 200;
+      });
+    }
+  }
+
+  scrollToTop() {
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
 }
