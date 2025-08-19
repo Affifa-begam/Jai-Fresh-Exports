@@ -324,9 +324,9 @@
   margin-bottom: 60px;
 }
 
-/* Extra gap if directly following another section */
-.or-service-page-section + .or-service-page-section {
-  margin-top: 60px;
+.or-service-page-section:last-of-type {
+  margin-bottom: 80px; /* keep spacing */
+  padding-bottom: 40px; /* ensure gap stays */
 }
 
 /* Remove gap if it's the very last section OR before subscribe section */
