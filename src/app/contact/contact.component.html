@@ -1,45 +1,49 @@
+<!-- ===========================
+     CONTACT PAGE
+=========================== -->
 
-<!-- ABOUT HERO BANNER -->
-<section class="hero-banner about-hero position-relative d-flex align-items-center justify-content-center">
+<!-- HERO SECTION -->
+<section class="hero-banner about-hero position-relative d-flex align-items-center justify-content-center" data-aos="fade-up">
   <!-- Overlay -->
   <div class="overlay"></div>
 
   <!-- Text -->
   <div class="container text-center text-white position-relative z-1">
-    <h1 class="fw-bold mb-3 animate__animated animate__fadeInDown">Contact Us</h1>
-    <p class="about-text animate__animated animate__fadeInUp animate__delay-1s">
+    <h1 class="fw-bold mb-3" data-aos="fade-down" data-aos-delay="200">Contact Us</h1>
+    <p class="about-text" data-aos="fade-up" data-aos-delay="400">
       Get in touch with us for inquiries, orders, or more information about our eco-friendly products.
     </p>
   </div>
 </section>
 
 <!-- CONTACT INFO -->
-<div class="contact-section">
-  <div class="contact-card">
-    <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+<div class="contact-section container py-5 d-flex flex-wrap justify-content-center gap-4">
+  <!-- Address -->
+  <div class="contact-card text-center p-4 shadow rounded" data-aos="zoom-in" data-aos-delay="200">
+    <div class="icon-box mb-3"><i class="fas fa-map-marker-alt fa-2x text-primary"></i></div>
     <h4>Address</h4>
     <p>Jai Fresh India,<br>1152/40, Trichy Road,<br>Ramanathapuram,<br>Coimbatore - 641045,<br>Tamil Nadu, India.</p>
   </div>
 
-  <div class="contact-card">
-    <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+  <!-- WhatsApp & Phone -->
+  <div class="contact-card text-center p-4 shadow rounded" data-aos="zoom-in" data-aos-delay="400">
+    <div class="icon-box mb-3"><i class="fab fa-whatsapp fa-2x text-success"></i></div>
     <h4>WhatsApp & Phone</h4>
     <p>WhatsApp: +91 96888 28111<br>Phone: (+91) 98940 28111<br>Phone: (+91) 97109 19791</p>
   </div>
 
-  <div class="contact-card">
-    <div class="icon-box"><i class="fas fa-envelope"></i></div>
+  <!-- Email -->
+  <div class="contact-card text-center p-4 shadow rounded" data-aos="zoom-in" data-aos-delay="600">
+    <div class="icon-box mb-3"><i class="fas fa-envelope fa-2x text-danger"></i></div>
     <h4>Email</h4>
     <p>jaifreshindia@gmail.com</p>
   </div>
 </div>
 
-
-
 <!-- CONTACT FORM -->
-<section id="or-contact-form" class="py-5 bg-light">
+<section id="or-contact-form" class="py-5 bg-light" data-aos="fade-up">
   <div class="container">
-    <div class="section-title text-center mb-4">
+    <div class="section-title text-center mb-4" data-aos="fade-up" data-aos-delay="200">
       <span class="sub-title">Contact Us</span>
       <h2>Send Message</h2>
     </div>
@@ -51,8 +55,7 @@
         <div class="col-md-6">
           <div class="form-floating">
             <input type="text" class="form-control" id="u_name" name="name"
-                   [(ngModel)]="formData.name"
-                   placeholder="Full Name"
+                   [(ngModel)]="formData.name" placeholder="Full Name"
                    required #name="ngModel">
             <label for="u_name">Full Name*</label>
             <div *ngIf="name.invalid && name.touched" class="text-danger small mt-1">
@@ -62,40 +65,28 @@
         </div>
 
         <!-- Email -->
-        <!-- Email -->
-<div class="col-md-6">
-  <div class="form-floating">
-    <input 
-      type="email" 
-      class="form-control" 
-      id="email" 
-      name="email"
-      [(ngModel)]="formData.email"
-      placeholder="Email Address"
-      required
-      pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-      #email="ngModel">
-    <label for="email">Email Address*</label>
-
-    <!-- Error: Required -->
-    <div *ngIf="email.errors?.['required'] && email.touched" class="text-danger small mt-1">
-      Email is required.
-    </div>
-
-    <!-- Error: Pattern -->
-    <div *ngIf="email.errors?.['pattern'] && email.touched" class="text-danger small mt-1">
-      Please enter a valid email address.
-    </div>
-  </div>
-</div>
-
+        <div class="col-md-6">
+          <div class="form-floating">
+            <input type="email" class="form-control" id="email" name="email"
+                   [(ngModel)]="formData.email" placeholder="Email Address"
+                   required
+                   pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                   #email="ngModel">
+            <label for="email">Email Address*</label>
+            <div *ngIf="email.errors?.['required'] && email.touched" class="text-danger small mt-1">
+              Email is required.
+            </div>
+            <div *ngIf="email.errors?.['pattern'] && email.touched" class="text-danger small mt-1">
+              Please enter a valid email address.
+            </div>
+          </div>
+        </div>
 
         <!-- Phone -->
         <div class="col-md-6">
           <div class="form-floating">
             <input type="tel" class="form-control" id="phone" name="phone"
-                   [(ngModel)]="formData.phone"
-                   placeholder="Phone Number"
+                   [(ngModel)]="formData.phone" placeholder="Phone Number"
                    pattern="^[0-9]{10}$" #phone="ngModel">
             <label for="phone">Phone Number*</label>
             <div *ngIf="phone.invalid && phone.touched" class="text-danger small mt-1">
@@ -108,8 +99,7 @@
         <div class="col-md-6">
           <div class="form-floating">
             <input type="text" class="form-control" id="city" name="city"
-                   [(ngModel)]="formData.city"
-                   placeholder="City">
+                   [(ngModel)]="formData.city" placeholder="City">
             <label for="city">City*</label>
           </div>
         </div>
@@ -118,16 +108,14 @@
         <div class="col-12">
           <div class="form-floating">
             <textarea class="form-control" id="message" name="message"
-                      [(ngModel)]="formData.message"
-                      placeholder="Message" style="height: 150px"></textarea>
+                      [(ngModel)]="formData.message" placeholder="Message" style="height: 150px"></textarea>
             <label for="message">Message*</label>
           </div>
         </div>
 
         <!-- Submit -->
         <div class="col-12 text-center">
-          <button type="submit" class="btn btn-primary px-4 py-2"
-                  [disabled]="contactForm.invalid">
+          <button type="submit" class="btn btn-primary px-4 py-2" [disabled]="contactForm.invalid">
             Submit
           </button>
         </div>
@@ -136,11 +124,10 @@
   </div>
 </section>
 
-
 <!-- MAP -->
-<section class="py-5">
+<section class="py-5" data-aos="fade-up" data-aos-delay="300">
   <div class="container">
-    <div class="section-title text-center mb-4">
+    <div class="section-title text-center mb-4" data-aos="fade-down" data-aos-delay="200">
       <span class="sub-title">Our Location</span>
       <h2>Our Location on Map</h2>
     </div>
